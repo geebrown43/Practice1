@@ -14,14 +14,26 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = selectedImage
+        navigationItem.largeTitleDisplayMode = .never // makes the text small instead of large unlike parent class
         if let selected = selectedImage{
             imageView.image = UIImage(named: selected) // sets cell image to what was selected
         }
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.hidesBarsOnTap = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.hidesBarsOnTap = false
+    }
 
-
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        return navigationController?.hidesBarsOnTap ?? false
+    }
     /*
     // MARK: - Navigation
 

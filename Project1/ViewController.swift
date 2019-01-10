@@ -15,7 +15,8 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        title = "Storm Viewer" // adds title to navigation bar
+        navigationController?.navigationBar.prefersLargeTitles = true
         let fm = FileManager.default // allows us to look for files
         let path = Bundle.main.resourcePath! // finds files added to app
         let items = try! fm.contentsOfDirectory(atPath: path) // returns contents of path -- is an array with names of all files found in resource directory

@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,15 +18,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Picture" textLabel="ipC-D0-Aru" style="IBUITableViewCellStyleDefault" id="AL5-Bw-5UX">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Picture" textLabel="ipC-D0-Aru" style="IBUITableViewCellStyleDefault" id="AL5-Bw-5UX">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AL5-Bw-5UX" id="DsB-C7-uFs">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ipC-D0-Aru">
-                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -56,7 +55,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I93-vo-se4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I93-vo-se4">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
@@ -64,10 +63,9 @@
                         <constraints>
                             <constraint firstItem="I93-vo-se4" firstAttribute="top" secondItem="ahY-Vh-81p" secondAttribute="top" id="D4j-hX-qEg"/>
                             <constraint firstItem="I93-vo-se4" firstAttribute="leading" secondItem="ahY-Vh-81p" secondAttribute="leading" id="MIp-jF-Ykm"/>
-                            <constraint firstItem="I93-vo-se4" firstAttribute="bottom" secondItem="HH6-SI-ZXD" secondAttribute="bottom" id="jtx-Dd-cqr"/>
+                            <constraint firstItem="I93-vo-se4" firstAttribute="bottom" secondItem="ahY-Vh-81p" secondAttribute="bottom" id="jtx-Dd-cqr"/>
                             <constraint firstAttribute="trailing" secondItem="I93-vo-se4" secondAttribute="trailing" id="pS4-Ak-G8r"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="HH6-SI-ZXD"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="I93-vo-se4" id="bEn-qb-XN9"/>
