@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
     
     var pictures: [String] = []
 
@@ -27,10 +27,17 @@ class ViewController: UIViewController {
                 
             }
         }
-        
-        print(pictures)
     }
-
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return pictures.count //returns number of items in Array similar to Array.length(JavaScript)
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {  // cellForRowat: called when need to provide a row -- indexPath: data type contains section number and row number
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Picture", for: indexPath) //dequeues a recycled cell from the table must give identifier in this case Picture
+        cell.textLabel?.text = pictures[indexPath.row]
+        return cell
+    }
 
 }
 
