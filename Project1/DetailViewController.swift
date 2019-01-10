@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = selectedImage
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped)) //action is saying when a button is tapped what method should be called --- target is saying that the method belongs to self(current view controller) -- #selector tells Swift complier that a method called sahreTapped will exist and should be triggered when button is tapped
         navigationItem.largeTitleDisplayMode = .never // makes the text small instead of large unlike parent class
         if let selected = selectedImage{
             imageView.image = UIImage(named: selected) // sets cell image to what was selected
@@ -29,6 +30,12 @@ class DetailViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.hidesBarsOnTap = false
+    }
+    
+    @objc func shareTapped() {  // @objc means method will be called by OBJ-C operating system --SN: if you use #selector you must use @objc as well
+        let vc = UIActivityViewController(activityItems: [imageView.image!], applicationActivities: []) // UIActivityViewController shares content with other apps
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem // tells IOS where activity view controller should be anchored- where should appear from
+        present(vc, animated: true)
     }
 
     override var prefersHomeIndicatorAutoHidden: Bool {
